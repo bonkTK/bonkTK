@@ -89,8 +89,8 @@ function sloganText() {
 	}
 	setTimeout(fadeout, 4250);
 }
-/*
-setInterval(sloganText, 5000);*/
+
+setInterval(sloganText, 5000);
 
 const staff = {
 	Alex2810: {
