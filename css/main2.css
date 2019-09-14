@@ -558,6 +558,10 @@ footer {
 		display: none;
 	}
 
+#slogan-text {
+	font-size: 40px;
+}
+
 	.ladder {
 		margin: 10px 0;
 	}
