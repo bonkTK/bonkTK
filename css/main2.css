@@ -1,0 +1,560 @@
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	background-color: rgba(21, 21, 21, .25);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #F05843;
+}
+
+body {
+	background: #152331;
+	position: relative;
+	z-index: 0;
+	height: 100vh;
+	font: 16px 'Roboto';
+	color: #EAFFF9;
+	overflow: hidden;
+}
+
+#app {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+a {
+	display: block;
+	color: #EAFFF9;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+span {
+	display: block;
+}
+
+.container {
+	display: flex;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1170px;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+	background: #18232E;
+	border-bottom: solid 2px #F05843;
+	box-shadow: 0 2px 10px rgba(21, 21, 21, .25);
+	z-index: 5;
+	overflow-y: scroll;
+}
+
+.page-header .container {
+	padding: 12px 20px;
+	position: relative;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+}
+
+.brand {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 1 1 0;
+}
+
+.brand h1 {
+	font-size: 24px;
+	text-transform: uppercase;
+	text-shadow: 0 1.5px 0 rgba(21, 21, 21, .75);
+}
+
+#hb-button {
+	display: none;
+	cursor: pointer;
+}
+
+.menu li {
+	display: inline-block;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 2px rgba(21, 21, 21, .25);
+}
+
+.menu a {
+	padding: 6px 12px;
+	border: solid 2px rgba(0, 0, 0, 0);
+	transition: .75s;
+}
+
+.menu a:hover {
+	border: solid 2px #EAFFF9;
+}
+
+.menu .menu-btn {
+	border: solid 2px #F05843;
+}
+
+.menu .menu-btn:hover {
+	border: solid 2px #EFD05F;
+	color: #EFD05F;
+}
+
+main {
+	height: calc(100vh - 80px - 39px);
+	overflow-y: scroll;
+}
+
+main .container {
+	padding: 60px 20px;
+	position: relative;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slogan {
+	height: 100%;
+	justify-content: center;
+}
+
+.bg {
+	width: 100%;
+	min-height: 50%;
+	position: absolute;
+	top: 0;
+	background: url("../img/bonk.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+}
+
+.bg:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to top, #152331, rgba(21, 21, 21, .25));
+	position: absolute;
+}
+
+.bg-bottom {
+	background: url("../img/hideout.svg");
+	background-size: 10px;
+	min-height: 50%;
+	bottom: 0;
+	top: auto;
+}
+
+.bg-bottom:after {
+	background: linear-gradient(to bottom, #152331, rgba(21, 21, 21, .25), #152331);
+}
+
+.content-header {
+	font-size: 32px;
+	text-align: center;
+	color: #EAFFF9;
+	text-transform: uppercase;
+	text-shadow: 0 3px 0 rgba(21, 21, 21, .25);
+	z-index: 2;
+	margin-bottom: 1em;
+}
+
+#slogan-text {
+	font-size: 60px;
+	font-weight: 700;
+	margin-bottom: 0;
+	opacity: 1;
+	transition: .75s opacity;
+}
+
+.text-primary {
+	color: #EFD05F;
+}
+
+.text-description {
+	max-width: 80%;
+	margin-top: 1em;
+	text-align: center;
+}
+
+.text-secondary {
+	color: #F05843;
+}
+
+.feature-boxes {
+	max-width: 80%;
+}
+
+.owl-carousel {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.owl-theme .owl-nav {
+	height: 0;
+}
+
+.owl-theme .owl-nav .fas {
+	font-size: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-shadow: 0 0 2px rgba(21, 21, 21, .25);
+}
+
+.owl-theme .owl-nav .fa-chevron-left {
+	left: -30px;
+}
+
+.owl-theme .owl-nav .fa-chevron-right {
+	right: -30px;
+}
+
+.feature-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	padding: 25px;
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+.feature-box span {
+	text-align: center;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+.feature-box .text-secondary {
+	margin-top: 10px;
+	color: #EAFFF9;
+	font-size: 16px;
+	text-transform: none;
+}
+
+.feature-box img {
+	max-height: 96px;
+	margin-bottom: 20px;
+	object-fit: contain;
+}
+
+.contact-section {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.contact-box {
+	flex: 1 1 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-width: 350px;
+}
+
+.discord-avatar {
+	max-height: 256px;
+	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
+	border-radius: 256px;
+	overflow: hidden;
+	margin: 20px;
+}
+
+.discord-avatar img {
+	object-fit: contain;
+	max-height: 256px;
+}
+
+.discord-name {
+	display: inline-block;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.discord-index {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.competitions {
+	max-width: 900px;
+	margin: 0 auto 35px;
+}
+
+.competitions,
+.awards-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.competitions li {
+	background: rgba(24, 35, 46, .75);
+	border: solid 2px #EAFFF9;
+	padding: 6px 12px;
+	margin: 5px;
+	box-shadow: 0 0 4px rgba(21, 21, 21, .75);
+	transition: .75s;
+	cursor: pointer;
+}
+
+.competitions .active,
+.competitions .active:hover {
+	border: solid 2px #F05843;
+	color: #EAFFF9;
+}
+
+.competitions li:hover {
+	border: solid 2px #EFD05F;
+	color: #EFD05F;
+}
+
+.note {
+	margin-bottom: 20px;
+	padding: 10px;
+	background: rgba(21, 21, 21, .2);
+	color: #EFD05F;
+	text-align: center;
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
+}
+
+.season__box {
+	flex: 1 1 300px;
+	min-width: 325px;
+	max-width: 325px;
+	background: linear-gradient(to top, #18232E, #152331);
+	box-shadow: 0 0 20px rgba(21, 21, 21, .5);
+	border: solid 2px #F05843;
+	margin: 20px;
+	z-index: 2;
+}
+
+.season__title {
+	background: #18232E;
+	box-shadow: 0 2px 2px rgba(21, 21, 21, .25);
+	text-shadow: 2px 2px 2px rgba(21, 21, 21, .25);
+	padding: 17.5px;
+	margin-bottom: 17.5px;
+}
+
+.season__title h2 {
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.season__title h3 {
+	font-size: 15px;
+	font-weight: 400;
+	color: #F05843;
+}
+
+.season__player--box {
+	padding: 0 17.5px 17.5px;
+}
+
+.season__player--box p {
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.ladder-box {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ladder {
+	margin: 10px;
+	flex: 2 1 700px;
+}
+
+.ladder-1v1 {
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.ladder-info {
+	margin: 10px;
+	flex: 1 1 300px;
+}
+
+.ladder-info .box-header {
+	overflow-y: hidden;
+}
+
+.ladder-info-content {
+	background: #2c4055;
+	box-shadow: 0 0 5px rgba(21, 21, 21, 0.5);
+	max-height: 550px;
+	overflow-y: scroll;
+}
+
+.info-box {
+	padding: 10px;
+}
+
+.info-box li {
+	background: rgba(240, 240, 240, .05);
+	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
+	padding: 10px;
+	margin: 5px 0;
+}
+
+.player-box,
+.box-header {
+	background: #2c4055;
+	box-shadow: 0 0 2px rgba(21, 21, 21, 0.5);
+	min-height: 50px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.box-header {
+	background: #181818;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+	overflow-y: scroll;
+}
+
+.second-header {
+	background: rgba(21, 21, 21, .25);
+}
+
+.box-header span {
+	margin: 0 auto;
+}
+
+.player-right {
+	display: flex;
+	flex: 1 1 0;
+	justify-content: space-between;
+	padding: 0 7.5px;
+}
+
+.player-right div {
+	display: flex;
+	align-items: center;
+}
+
+.season__player--box .player-info {
+	font-size: 18px;
+}
+
+.player-info {
+	flex: 1 1 0;
+}
+
+.player-info img {
+	margin-right: 7.5px;
+}
+
+.position,
+.player-stats span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 50px;
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+}
+
+.position {
+	background: rgba(21, 21, 21, .25);
+	margin-left: 0;
+}
+
+.player-stats .award {
+	max-width: 40px;
+	width: 40px;
+	height: 40px;
+}
+
+.player-info img,
+.player-stats .award img {
+	max-width: 40px;
+	max-height: 40px;
+	object-fit: contain;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	background: rgba(21, 21, 21, .25);
+	box-shadow: 0 0 10px rgba(21, 21, 21, .2);
+	font-size: 16px;
+}
+
+/*Mobile view*/
+
+@media (max-width: 768px) {
+
+
+	main::-webkit-scrollbar {
+		display: none;
+	}
+
+	main .container {
+		padding: 40px 20px;
+	}
+
+	.page-header {
+		padding-right: 0;
+	}
+
+	.page-header .container {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.page-header .container div {
+		flex: 1 1 100%;
+	}
+
+	#hb-button {
+		display: block;
+	}
+
+	.menu {
+		display: none;
+		position: static;
+		padding-top: 18px;
+	}
+
+	.menu li {
+		display: block;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	.menu-btn {
+		display: none;
+	}
+}
