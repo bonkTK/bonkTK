@@ -377,21 +377,24 @@ main .container {
 
 .grid {
 	width: 100%;
-	display: grid;
-	grid-template-columns: 7fr 3fr;
-	grid-template-rows: 1fr
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
 }
 
-.ladder-1v1 {
-	max-height: 500px;
-	overflow-y: auto;
+.competition-box {
+	flex: 1 1 700px;
+}
+
+.competition-info {
+	flex: 1 1 300px;
 }
 
 .competition-box,
 .competition-info {
 	background: #2c4055;
 	box-shadow: 0 0 5px rgba(21, 21, 21, 0.5);
-	margin: 10px;
+	margin: 15px 5px;
 }
 
 .competition-items {
@@ -399,13 +402,13 @@ main .container {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	padding: 10px;
+	padding: 5px;
 }
 
 .competition-items a {
 	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
 	flex: 1 1 0;
-	margin: 10px;
+	margin: 5px;
 	min-width: 300px;
 	height: 225px;
 	border: solid 2px #181818;
@@ -458,12 +461,6 @@ main .container {
 
 .tournament-mode .fas {
 	color: #EFD05F;
-}
-
-.competition-items,
-.competition-info-content {
-	max-height: 550px;
-	overflow-y: auto;
 }
 
 .competition-info p,
@@ -590,7 +587,7 @@ footer {
 	}
 
 	main .container {
-		padding: 40px 10px;
+		padding: 40px 0;
 	}
 
 	.page-header {
