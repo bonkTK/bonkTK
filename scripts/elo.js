@@ -176,7 +176,7 @@ for (let i = 0, p = 1; i < newPlayers.length; i++, p++) {
 
 	let playerBox = document.createElement('div');
 	
-		if (newPlayers[i].matchesPlayed > 0) {
+		if (newPlayers[i].matchesPlayed >= 0) {
 	playerBox.innerHTML =
 		`
 		<div class="player-box">

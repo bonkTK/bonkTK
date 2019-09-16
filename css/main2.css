@@ -117,7 +117,7 @@ span {
 }
 
 main {
-	height: calc(100vh - 80px - 39px);
+	height: calc(100vh - 80px - 36px);
 	overflow-y: scroll;
 }
 
@@ -187,7 +187,7 @@ main .container {
 }
 
 .text-description {
-	max-width: 80%;
+	max-width: 90%;
 	margin-top: 1em;
 	text-align: center;
 }
@@ -231,7 +231,7 @@ main .container {
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
-	padding: 25px;
+	padding: 15px;
 	max-width: 350px;
 	margin: 0 auto;
 }
@@ -262,12 +262,11 @@ main .container {
 }
 
 .contact-box {
-	flex: 1 1 49%;
+	flex: 1 1 350px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	min-width: 350px;
 }
 
 .discord-avatar {
@@ -338,22 +337,26 @@ main .container {
 }
 
 .season__box {
-	flex: 1 1 300px;
-	min-width: 325px;
+	flex: 1 1 325px;
+	min-width: 300px;
 	max-width: 325px;
 	background: linear-gradient(to top, #18232E, #152331);
 	box-shadow: 0 0 20px rgba(21, 21, 21, .5);
 	border: solid 2px #F05843;
-	margin: 20px;
+	margin: 10px;
 	z-index: 2;
+}
+
+.awards-list .season__box {
+	margin: 20px;
 }
 
 .season__title {
 	background: #18232E;
 	box-shadow: 0 2px 2px rgba(21, 21, 21, .25);
 	text-shadow: 2px 2px 2px rgba(21, 21, 21, .25);
-	padding: 17.5px;
-	margin-bottom: 17.5px;
+	padding: 15px;
+	margin-bottom: 15px;
 }
 
 .season__title h2 {
@@ -368,7 +371,7 @@ main .container {
 }
 
 .season__player--box {
-	padding: 0 17.5px 17.5px;
+	padding: 0 15px 15px;
 }
 
 .season__player--box p {
@@ -376,43 +379,69 @@ main .container {
 	margin-bottom: 5px;
 }
 
-.ladder-box {
+.grid {
 	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.ladder {
-	margin: 10px;
-	flex: 2 1 700px;
+	display: grid;
+	grid-template-columns: 7fr 3fr;
+	grid-template-rows: 1fr;
+	grid-gap: 20px;
 }
 
 .ladder-1v1 {
 	max-height: 500px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
-.ladder-info {
-	margin: 10px;
-	flex: 1 1 300px;
-}
-
-.ladder-info .box-header {
-	overflow-y: hidden;
-}
-
-.ladder-info-content {
+.competition-box,
+.competition-info {
 	background: #2c4055;
 	box-shadow: 0 0 5px rgba(21, 21, 21, 0.5);
-	max-height: 550px;
-	overflow-y: scroll;
 }
 
-.info-box {
+.competition-items {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	padding: 10px;
 }
 
-.info-box li {
+.competition-items div {
+	flex: 1 1 45%;
+	margin: 10px;
+	max-width: calc(50% - 20px);
+	height: 225px;
+	border: solid 1px white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 24px;
+}
+
+.competition-items .ladder-item {
+	flex: 1 1 100%;
+	max-width: 100%;
+}
+
+.competition-items,
+.competition-info-content {
+	max-height: 550px;
+	overflow-y: auto;
+}
+
+.competition-info p,
+.competition-info ul {
+	padding: 10px;
+	font-size: 15px;
+}
+
+.competition-info h4 {
+	font-size: 16px;
+	padding: 10px 10px 0;
+}
+
+.competition-info li {
 	background: rgba(240, 240, 240, .05);
 	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
 	padding: 10px;
@@ -440,7 +469,7 @@ main .container {
 }
 
 .second-header {
-	background: rgba(21, 21, 21, .25);
+	background: rgba(21, 21, 21, .5);
 }
 
 .box-header span {
@@ -476,27 +505,30 @@ main .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	max-width: 50px;
-	width: 50px;
-	height: 50px;
+	max-width: 40px;
+	width: 40px;
+	height: 40px;
 	margin-left: 5px;
 }
 
 .position {
 	background: rgba(21, 21, 21, .25);
 	margin-left: 0;
+	max-width: 50px;
+	width: 50px;
+	height: 50px;
 }
 
 .player-stats .award {
-	max-width: 40px;
-	width: 40px;
-	height: 40px;
+	max-width: 35px;
+	width: 35px;
+	height: 35px;
 }
 
 .player-info img,
 .player-stats .award img {
-	max-width: 40px;
-	max-height: 40px;
+	max-width: 35px;
+	max-height: 35px;
 	object-fit: contain;
 }
 
@@ -509,7 +541,7 @@ footer {
 	padding: 10px;
 	background: rgba(21, 21, 21, .25);
 	box-shadow: 0 0 10px rgba(21, 21, 21, .2);
-	font-size: 16px;
+	font-size: 14px;
 }
 
 /*Mobile view*/
@@ -557,7 +589,7 @@ footer {
 	.menu-btn {
 		display: none;
 	}
-	
+
 	.content-header {
 		font-size: 24px;
 	}
@@ -566,10 +598,17 @@ footer {
 		font-size: 32px;
 	}
 
-	.ladder {
-		margin: 10px 0;
+	.grid {
+		flex: 1 1 0;
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 
-	.ladder-info {
-		margin: 10px 0;
+	.competition-info-content {
+		max-height: 100%;
 	}
+
+	.competition-items div {
+		max-width: 100%
+	}
+}
