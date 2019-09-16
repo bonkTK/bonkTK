@@ -343,11 +343,7 @@ main .container {
 	background: linear-gradient(to top, #18232E, #152331);
 	box-shadow: 0 0 20px rgba(21, 21, 21, .5);
 	border: solid 2px #F05843;
-	margin: 10px;
 	z-index: 2;
-}
-
-.awards-list .season__box {
 	margin: 20px;
 }
 
@@ -383,8 +379,7 @@ main .container {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 7fr 3fr;
-	grid-template-rows: 1fr;
-	grid-gap: 20px;
+	grid-template-rows: 1fr
 }
 
 .ladder-1v1 {
@@ -396,6 +391,7 @@ main .container {
 .competition-info {
 	background: #2c4055;
 	box-shadow: 0 0 5px rgba(21, 21, 21, 0.5);
+	margin: 10px;
 }
 
 .competition-items {
@@ -407,21 +403,61 @@ main .container {
 }
 
 .competition-items a {
-	flex: 1 1 45%;
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
+	flex: 1 1 0;
 	margin: 10px;
-	max-width: calc(50% - 20px);
+	min-width: 300px;
 	height: 225px;
-	border: solid 1px white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	border: solid 2px #181818;
 	text-transform: uppercase;
 	font-size: 24px;
+	font-weight: 500;
+	background-image: url("../img/bonk.png");
+	background-size: auto;
+	background-position: 92%;
 }
 
 .competition-items .ladder-item {
 	flex: 1 1 100%;
-	max-width: 100%;
+}
+
+.tournament {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.tournament-name {
+	padding: 10px;
+	width: 100%;
+	font-size: 28px;
+	background: #181818;
+}
+
+.tournament-type {
+	font-size: 16px;
+}
+
+.tournament-mode {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	flex-direction: column;
+	height: 100%;
+	padding: 5px;
+}
+
+.tournament-mode span {
+	margin: 5px;
+	padding: 6px 18px;
+	background: rgba(21, 21, 21, .9);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
+	border-radius: 4px;
+	font-size: 18px;
+}
+
+.tournament-mode .fas {
+	color: #EFD05F;
 }
 
 .competition-items,
