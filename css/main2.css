@@ -16,13 +16,24 @@
 }
 
 body {
-	background: #152331;
+	background: url('https://images.alphacoders.com/510/thumb-1920-510026.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	position: relative;
 	z-index: 0;
 	height: 100vh;
 	font: 16px 'Roboto';
 	color: #EAFFF9;
 	overflow: hidden;
+}
+
+body:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: rgba(21, 21, 21, .75);
+	position: absolute;
 }
 
 #app {
@@ -32,6 +43,7 @@ body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	z-index: 1;
 }
 
 a {
@@ -119,6 +131,7 @@ span {
 main {
 	height: calc(100vh - 80px - 36px);
 	overflow-y: scroll;
+	background: rgba(24, 35, 46, 1);
 }
 
 main .container {
@@ -129,39 +142,7 @@ main .container {
 }
 
 .slogan {
-	min-height: 100%;
-	justify-content: center;
-}
-
-.bg {
-	width: 100%;
-	min-height: 50%;
-	position: absolute;
-	top: 0;
-	background: url("../img/bonk.png") no-repeat;
-	background-size: cover;
-	background-position: center;
-	z-index: 1;
-}
-
-.bg:after {
-	content: "";
-	width: 100%;
 	height: 100%;
-	background: linear-gradient(to top, #152331, rgba(21, 21, 21, .25));
-	position: absolute;
-}
-
-.bg-bottom {
-	background: url("../img/hideout.svg");
-	background-size: 10px;
-	min-height: 50%;
-	bottom: 0;
-	top: auto;
-}
-
-.bg-bottom:after {
-	background: linear-gradient(to bottom, #152331, rgba(21, 21, 21, .25), #152331);
 }
 
 .content-header {
@@ -169,7 +150,7 @@ main .container {
 	text-align: center;
 	color: #EAFFF9;
 	text-transform: uppercase;
-	text-shadow: 0 3px 0 rgba(21, 21, 21, .25);
+	text-shadow: 2px 2px 0 rgba(21, 21, 21, .5);
 	z-index: 2;
 	margin-bottom: 1em;
 }
@@ -178,6 +159,7 @@ main .container {
 	font-size: 60px;
 	font-weight: 700;
 	margin-bottom: 0;
+	padding: 0 10px;
 	opacity: 1;
 	transition: .75s opacity;
 }
@@ -196,14 +178,14 @@ main .container {
 	color: #F05843;
 }
 
+#slogan-text,
 .feature-boxes {
-	max-width: 80%;
-}
-
-.owl-carousel {
+	height: 50%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .owl-theme .owl-nav {
@@ -251,7 +233,7 @@ main .container {
 
 .feature-box img {
 	max-height: 96px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	object-fit: contain;
 }
 
@@ -307,10 +289,13 @@ main .container {
 }
 
 .competitions li {
-	background: rgba(24, 35, 46, .75);
+	flex: 1 1 175px;
+	max-width: 215px;
+	background: rgba(24, 35, 46, .5);
 	border: solid 2px #EAFFF9;
 	padding: 6px 12px;
 	margin: 5px;
+	text-align: center;
 	box-shadow: 0 0 4px rgba(21, 21, 21, .75);
 	transition: .75s;
 	cursor: pointer;
@@ -388,13 +373,10 @@ main .container {
 
 .competition-info {
 	flex: 1 1 300px;
-}
-
-.competition-box,
-.competition-info {
-	background: #2c4055;
-	box-shadow: 0 0 5px rgba(21, 21, 21, 0.5);
-	margin: 15px 5px;
+	margin: 10px;
+	background: rgba(24, 35, 46, .75);
+	border: solid 2px #181818;
+	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 }
 
 .competition-items {
@@ -402,26 +384,31 @@ main .container {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	padding: 5px;
 }
 
 .competition-items a {
-	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 	flex: 1 1 0;
-	margin: 5px;
+	margin: 10px;
 	min-width: 300px;
 	height: 225px;
 	border: solid 2px #181818;
 	text-transform: uppercase;
 	font-size: 24px;
 	font-weight: 500;
-	background-image: url("../img/bonk.png");
+	background-image: url("../img/bonczek.png");
+	background-repeat: no-repeat;
 	background-size: auto;
-	background-position: 92%;
+	background-position: center;
 }
 
 .competition-items .ladder-item {
 	flex: 1 1 100%;
+}
+
+.ladder-1v1 {
+	max-height: 500px;
+	overflow-y: auto;
 }
 
 .tournament {
@@ -434,10 +421,10 @@ main .container {
 	padding: 10px;
 	width: 100%;
 	font-size: 28px;
-	background: #181818;
 }
 
 .tournament-type {
+	color: #F05843;
 	font-size: 16px;
 }
 
@@ -453,7 +440,7 @@ main .container {
 .tournament-mode span {
 	margin: 5px;
 	padding: 6px 18px;
-	background: rgba(21, 21, 21, .9);
+	background: rgba(21, 21, 21, .8);
 	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 	border-radius: 4px;
 	font-size: 18px;
@@ -491,13 +478,20 @@ main .container {
 	display: flex;
 }
 
+.tournament-name,
 .box-header {
-	background: #181818;
+	background: #121212;
+	background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23EAFFF9' fill-opacity='0.025'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-size: 50px;
+}
+
+.box-header {
 	font-size: 16px;
 	text-transform: uppercase;
 	margin-top: 0;
 	display: flex;
 	align-items: center;
+	font-weight: 500;
 	overflow-y: scroll;
 }
 
@@ -572,8 +566,8 @@ footer {
 	display: flex;
 	justify-content: center;
 	padding: 10px;
-	background: rgba(21, 21, 21, .25);
-	box-shadow: 0 0 10px rgba(21, 21, 21, .2);
+	background: #18232E;
+	box-shadow: 0 0 2px rgba(21, 21, 21, .5);
 	font-size: 14px;
 }
 
@@ -628,13 +622,12 @@ footer {
 	}
 
 	#slogan-text {
-		font-size: 32px;
+		font-size: 36px;
 	}
 
-	.grid {
-		flex: 1 1 0;
-		display: grid;
-		grid-template-columns: 1fr;
+	#slogan-text,
+	.feature-boxes {
+		min-height: calc((100% - 80px - 36px)/2);
 	}
 
 	.competition-info-content {

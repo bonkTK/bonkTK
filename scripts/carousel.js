@@ -4,33 +4,16 @@ $('.owl-features').owlCarousel({
 	navText: [`<i class="fas fa-chevron-left"></i>`, `<i class="fas fa-chevron-right"></i>`],
 	margin: 20,
 	autoplay: true,
-	autoplayTimeout: 10000,
-	smartSpeed: 1250,
+	autoplayTimeout: 5000,
+	smartSpeed: 1000,
 	dots: false,
 	responsiveClass: true,
 	responsive: {
 		0: {
-			items: 1
+			items: 1,
+			nav: false
 		},
 		768: {
-			items: 2
-		}
-	}
-
-});
-$('.owl-videos').owlCarousel({
-	loop: true,
-	nav: true,
-	navText: [`<i class="fas fa-chevron-left"></i>`, `<i class="fas fa-chevron-right"></i>`],
-	margin: 20,
-	smartSpeed: 1250,
-	dots: false,
-	responsiveClass: true,
-	responsive: {
-		0: {
-			items: 1
-		},
-		900: {
 			items: 2
 		}
 	}
