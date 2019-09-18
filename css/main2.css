@@ -16,9 +16,11 @@
 }
 
 body {
-	background: url('https://images.alphacoders.com/510/thumb-1920-510026.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
+	height: 100%;
+	width: 100%;
+	background-color: #152331;
+	background-image: url("../img/bg.png");
+	background-size: auto;
 	background-position: center;
 	position: relative;
 	z-index: 0;
@@ -26,14 +28,6 @@ body {
 	font: 16px 'Roboto';
 	color: #EAFFF9;
 	overflow: hidden;
-}
-
-body:after {
-	content: "";
-	width: 100%;
-	height: 100%;
-	background: rgba(21, 21, 21, .75);
-	position: absolute;
 }
 
 #app {
@@ -121,6 +115,7 @@ span {
 
 .menu .menu-btn {
 	border: solid 2px #F05843;
+	color: #F05843;
 }
 
 .menu .menu-btn:hover {
@@ -131,7 +126,6 @@ span {
 main {
 	height: calc(100vh - 80px - 36px);
 	overflow-y: scroll;
-	background: rgba(24, 35, 46, 1);
 }
 
 main .container {
@@ -289,9 +283,9 @@ main .container {
 }
 
 .competitions li {
-	flex: 1 1 175px;
+	flex: 1 1 185px;
 	max-width: 215px;
-	background: rgba(24, 35, 46, .5);
+	background: #18232E;
 	border: solid 2px #EAFFF9;
 	padding: 6px 12px;
 	margin: 5px;
@@ -299,12 +293,13 @@ main .container {
 	box-shadow: 0 0 4px rgba(21, 21, 21, .75);
 	transition: .75s;
 	cursor: pointer;
+	text-transform: uppercase;
 }
 
 .competitions .active,
 .competitions .active:hover {
 	border: solid 2px #F05843;
-	color: #EAFFF9;
+	color: #F05843;
 }
 
 .competitions li:hover {
@@ -333,11 +328,11 @@ main .container {
 }
 
 .season__title {
-	background: #18232E;
-	box-shadow: 0 2px 2px rgba(21, 21, 21, .25);
-	text-shadow: 2px 2px 2px rgba(21, 21, 21, .25);
 	padding: 15px;
 	margin-bottom: 15px;
+	box-shadow: 0 2px 2px rgba(21, 21, 21, .25);
+	text-shadow: 2px 2px 2px rgba(21, 21, 21, .25);
+	text-transform: uppercase;
 }
 
 .season__title h2 {
@@ -371,11 +366,16 @@ main .container {
 	flex: 1 1 700px;
 }
 
+.leader {
+	margin: 10px;
+	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
+}
+
 .competition-info {
 	flex: 1 1 300px;
 	margin: 10px;
-	background: rgba(24, 35, 46, .75);
-	border: solid 2px #181818;
+	background: #202e3c;
+	border: solid 2px #131c25;
 	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 }
 
@@ -392,7 +392,7 @@ main .container {
 	margin: 10px;
 	min-width: 300px;
 	height: 225px;
-	border: solid 2px #181818;
+	border: solid 2px #131c25;
 	text-transform: uppercase;
 	font-size: 24px;
 	font-weight: 500;
@@ -440,7 +440,7 @@ main .container {
 .tournament-mode span {
 	margin: 5px;
 	padding: 6px 18px;
-	background: rgba(21, 21, 21, .8);
+	background: rgba(21, 21, 21, .75);
 	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 	border-radius: 4px;
 	font-size: 18px;
@@ -470,7 +470,7 @@ main .container {
 
 .player-box,
 .box-header {
-	background: #2c4055;
+	background: #202e3c;
 	box-shadow: 0 0 2px rgba(21, 21, 21, 0.5);
 	min-height: 50px;
 	width: 100%;
@@ -478,9 +478,10 @@ main .container {
 	display: flex;
 }
 
+.season__title,
 .tournament-name,
 .box-header {
-	background: #121212;
+	background: #131c25;
 	background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23EAFFF9' fill-opacity='0.025'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 	background-size: 50px;
 }
@@ -496,7 +497,7 @@ main .container {
 }
 
 .second-header {
-	background: rgba(21, 21, 21, .5);
+	background: #18232e;
 }
 
 .box-header span {
@@ -581,7 +582,7 @@ footer {
 	}
 
 	main .container {
-		padding: 40px 0;
+		padding: 10px 0;
 	}
 
 	.page-header {
@@ -622,7 +623,7 @@ footer {
 	}
 
 	#slogan-text {
-		font-size: 36px;
+		font-size: 32px;
 	}
 
 	#slogan-text,
