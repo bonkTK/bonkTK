@@ -231,45 +231,6 @@ main .container {
 	object-fit: contain;
 }
 
-.contact-section {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-.contact-box {
-	flex: 1 1 350px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-.discord-avatar {
-	max-height: 256px;
-	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
-	border-radius: 256px;
-	overflow: hidden;
-	margin: 20px;
-}
-
-.discord-avatar img {
-	object-fit: contain;
-	max-height: 256px;
-}
-
-.discord-name {
-	display: inline-block;
-	font-size: 26px;
-	font-weight: 700;
-}
-
-.discord-index {
-	display: inline-block;
-	font-size: 18px;
-	font-weight: 400;
-}
-
 .competitions {
 	max-width: 900px;
 	margin: 0 auto 35px;
@@ -366,7 +327,8 @@ main .container {
 	flex: 1 1 700px;
 }
 
-.leader {
+.leader,
+.discord-app {
 	margin: 10px;
 	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 }
@@ -374,7 +336,7 @@ main .container {
 .competition-info {
 	flex: 1 1 300px;
 	margin: 10px;
-	background: #202e3c;
+	background: #263749;
 	border: solid 2px #131c25;
 	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
 }
@@ -406,11 +368,6 @@ main .container {
 	flex: 1 1 100%;
 }
 
-.ladder-1v1 {
-	max-height: 500px;
-	overflow-y: auto;
-}
-
 .tournament {
 	display: flex;
 	flex-direction: column;
@@ -440,10 +397,15 @@ main .container {
 .tournament-mode span {
 	margin: 5px;
 	padding: 6px 18px;
-	background: rgba(21, 21, 21, .75);
-	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
-	border-radius: 4px;
+	background: rgba(19, 28, 37, .9);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
+	border-radius: 3px;
 	font-size: 18px;
+	transition: .75s;
+}
+
+.tournament:hover .tournament-mode span {
+	color: #F05843;
 }
 
 .tournament-mode .fas {
@@ -470,7 +432,7 @@ main .container {
 
 .player-box,
 .box-header {
-	background: #202e3c;
+	background: #263749;
 	box-shadow: 0 0 2px rgba(21, 21, 21, 0.5);
 	min-height: 50px;
 	width: 100%;
@@ -493,7 +455,6 @@ main .container {
 	display: flex;
 	align-items: center;
 	font-weight: 500;
-	overflow-y: scroll;
 }
 
 .second-header {
@@ -560,6 +521,40 @@ main .container {
 	object-fit: contain;
 }
 
+widgetbot {
+	width: 100%;
+	border-radius: 0px !important;
+	height: 65vh;
+}
+
+.contact-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px;
+	font-weight: 400;
+}
+
+.contact-box p {
+	padding-top: 5px;
+	font-size: 18px;
+}
+
+.contact-box span {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.contact-box img {
+	margin: 10px 0;
+	max-width: 192px;
+	max-height: 192px;
+	border-radius: 192px;
+	box-shadow: 0 0 2px rgba(21, 21, 21, .5);
+}
+
 footer {
 	position: absolute;
 	bottom: 0;
@@ -575,7 +570,6 @@ footer {
 /*Mobile view*/
 
 @media (max-width: 768px) {
-
 
 	main::-webkit-scrollbar {
 		display: none;
@@ -629,10 +623,6 @@ footer {
 	#slogan-text,
 	.feature-boxes {
 		min-height: calc((100% - 80px - 36px)/2);
-	}
-
-	.competition-info-content {
-		max-height: 100%;
 	}
 
 	.competition-items div {
