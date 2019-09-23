@@ -147,6 +147,7 @@ main .container {
 	text-transform: uppercase;
 	text-shadow: 2px 2px 0 rgba(21, 21, 21, .5);
 	transition: .75s opacity;
+	text-align: center;
 }
 
 .text-primary {
@@ -570,6 +571,14 @@ footer {
 
 /*Mobile view*/
 
+@media (max-width: 640px) {
+	
+.player-stats .mobile-hidden {
+		display: none;
+	}
+}
+	
+	
 @media (max-width: 768px) {
 
 	main::-webkit-scrollbar {

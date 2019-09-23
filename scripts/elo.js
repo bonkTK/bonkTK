@@ -160,12 +160,12 @@ let displayRanking = () => {
 				</div>
 				<div class="player-stats">
 					<span class="matches">${newPlayers[i].played}</span>
-					<span class="wins">${newPlayers[i].wins}</span>
-					<span class="draws">${newPlayers[i].draws}</span>
-					<span class="loses">${newPlayers[i].loses}</span>
-					<span class="scored">${newPlayers[i].goalsScored}</span>
-					<span class="conceded">${newPlayers[i].goalsConceded}</span>
-					<span class="goaldiff">${gD}</span>
+					<span class="wins mobile-hidden">${newPlayers[i].wins}</span>
+					<span class="draws mobile-hidden">${newPlayers[i].draws}</span>
+					<span class="loses mobile-hidden">${newPlayers[i].loses}</span>
+					<span class="scored mobile-hidden">${newPlayers[i].goalsScored}</span>
+					<span class="conceded mobile-hidden">${newPlayers[i].goalsConceded}</span>
+					<span class="goaldiff mobile-hidden">${gD}</span>
 					<span class="rank">${newPlayers[i].rank}</span>
 				</div>
 			</div>
