@@ -31,7 +31,7 @@
 					<ul class="menu">
 						<li><a href="index.html" title="Home page">Home</a></li>
 						<li><a href="competitions.html" title="Competitions">Competitions</a></li>
-						<li><a href="league-1vs1.html" title="Hall of Fame">Hall of Fame</a></li>
+						<li><a href="hall-of-fame.html" title="Hall of Fame">Hall of Fame</a></li>
 						<li><a href="contact.html" title="Contact">Contact</a></li>
 						<li><a href="#" title="Join our Discord server" class="menu-btn">Discord</a></li>
 					</ul>
@@ -43,23 +43,21 @@
 		<main>
 
 			<section class="container">
-				<div class="grid">
-					<div class="competition-box discord-app">
-						<header class="box-header"><span>Discord server</span></header>
-						<widgetbot server="589731443903692801" channel="590633903576842245" shard="https://disweb.deploys.io"></widgetbot>
-						<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-					</div>
-					<div class="competition-info">
-						<header class="box-header"><span>Contact</span></header>
-						<div class="contact-box">
-							<img src="https://cdn.discordapp.com/avatars/324964304052813825/4e94d68774b009c3a86e84d6caa90c52.jpg?size=1024">
-							<span>Discord</span>
-							<p>Żau Feligz#1669</p>
-							<span>E-mail</span>
-							<p>trxior@gmail.com</p>
-						</div>
+				<ul class="competitions">
+					<li data-event="league-1vs1" id="active">League 1vs1 <i class="fa fa-chevron-down"></i></li>
+					<li data-event="cup-1vs1">Cup 1vs1</li>
+					<li data-event="supercup-1vs1">Super Cup 1vs1</li>
+					<li data-event="tournaments-1vs1">Tournaments 1vs1</li>
+					<li data-event="league-2vs2">League 2vs2</li>
+					<li data-event="cup-2vs2">Cup 2vs2</li>
+					<li data-event="supercup-2vs2">Super Cup 2vs2</li>
+					<li data-event="tournaments-2vs2">Tournaments 2vs2</li>
+				</ul>
+				<div class="awards">
+					<div class="awards-list">
 					</div>
 				</div>
+
 			</section>
 
 		</main>
@@ -68,7 +66,8 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="scripts/owl.carousel.min.js"></script>
 	<script src="scripts/carousel.js"></script>
-	<script src="scripts/elo.js"></script>
+	<script src="scripts/players.js"></script>
+	<script src="scripts/hall-of-fame.js"></script>
 </body>
 
 </html>

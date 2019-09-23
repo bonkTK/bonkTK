@@ -44,19 +44,38 @@
 
 			<section class="container">
 				<div class="grid">
-					<div class="competition-box discord-app">
-						<header class="box-header"><span>Discord server</span></header>
-						<widgetbot server="589731443903692801" channel="590633903576842245" shard="https://disweb.deploys.io"></widgetbot>
-						<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+					<div class="competition-box leader">
+						<header class="box-header"><span>Ladder 1vs1</span></header>
+						<div class="player-box box-header second-header">
+							<div class="position">#</div>
+							<div class="player-right">
+								<div class="player-info">Player</div>
+								<div class="player-stats">
+									<span class="matches">M</span>
+									<span class="wins">W</span>
+									<span class="draws">D</span>
+									<span class="loses">L</span>
+									<span class="scored">GF</span>
+									<span class="conceded">GA</span>
+									<span class="goaldiff">GD</span>
+									<span class="rank">PTS</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="ladder-1v1"></div>
 					</div>
 					<div class="competition-info">
-						<header class="box-header"><span>Contact</span></header>
-						<div class="contact-box">
-							<img src="https://cdn.discordapp.com/avatars/324964304052813825/4e94d68774b009c3a86e84d6caa90c52.jpg?size=1024">
-							<span>Discord</span>
-							<p>Żau Feligz#1669</p>
-							<span>E-mail</span>
-							<p>trxior@gmail.com</p>
+						<header class="box-header"><span>Statistics</span></header>
+						<div class="match-preview" id="last-match">
+						</div>
+						<div class="match-preview" id="played">
+						</div>
+						<div class="match-preview" id="highestRank">
+						</div>
+						<div class="match-preview" id="wins">
+						</div>
+						<div class="match-preview" id="goalsScored">
 						</div>
 					</div>
 				</div>
@@ -68,6 +87,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="scripts/owl.carousel.min.js"></script>
 	<script src="scripts/carousel.js"></script>
+	<script src="scripts/players.js"></script>
 	<script src="scripts/elo.js"></script>
 </body>
 

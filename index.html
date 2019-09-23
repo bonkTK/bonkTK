@@ -43,14 +43,14 @@
 		<main class="mainly">
 
 			<section class="container slogan">
-				<header id="slogan-text" class="content-header">
+				<header id="slogan-text">
 					<span id="slogan-primary">Welcome to</span>
 					<span id="slogan-secondary" class="text-secondary">the bonk.tk</span>
 				</header>
 				<div class="feature-boxes">
 					<div class="owl-carousel owl-theme owl-features">
 						<div class="feature-box">
-							<img src="img/crown.png">
+							<img src="img/ribbon.png">
 							<span class="text-primary">Prestige</span>
 							<span class="text-secondary">The oldest and most prestigious bonk.io competitions. Win a league title and become the best football player.</span>
 						</div>
@@ -74,17 +74,42 @@
 			</section>
 
 		</main>
-
-		<!--Footer-->
-		<footer>
-			<span>bonk.tk 2017 - 2019 © All rights reserved</span>
-		</footer>
-
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="scripts/owl.carousel.min.js"></script>
 	<script src="scripts/carousel.js"></script>
+	<script>
+		let sN = 0;
+		let sloganTexts = document.getElementById('slogan-text');
+
+		const slg = [
+			['Welcome to', 'the bonk.tk'],
+			['Participate in', 'presitigious tournaments'],
+			['Compete with', 'best football players'],
+			['Have a good time in', 'a friendly atmosphere']
+		];
+
+		let sloganText = () => {
+			setTimeout(() => {
+				sloganTexts.style.opacity = '1';
+			}, 25);
+
+			let slgNumber = slg[sN];
+			sloganTexts.innerHTML = `<span>${slgNumber[0]}</span><span class="text-secondary">${slgNumber[1]}</span>`
+			sN++;
+
+			if (sN === slg.length) {
+				sN = 0;
+			}
+
+			setTimeout(() => {
+				sloganTexts.style.opacity = '0';
+			}, 4250);
+		}
+
+		setInterval(sloganText, 5000);
+	</script>
 </body>
 
 </html>

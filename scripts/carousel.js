@@ -35,42 +35,16 @@ $(window).resize(function () {
 	};
 });
 
-let sloganNumber = 1;
+$('.competitions').on('click', '#active', function () {
+	$('.competitions li').show();
+	$( "#active .fa-chevron-down" ).remove();
+});
 
-
-function fadeout() {
-	document.getElementById('slogan-text').style.opacity = '0';
-}
-
-function fadein() {
-	document.getElementById('slogan-text').style.opacity = '1';
-}
-
-
-function sloganText() {
-	let sloganPrimary = document.getElementById('slogan-primary');
-	let sloganSecondary = document.getElementById('slogan-secondary');
-
-	setTimeout(fadein, 25);
-
-	if (sloganNumber === 1) {
-		sloganPrimary.innerHTML = "Welcome to";
-		sloganSecondary.innerHTML = "the bonk.tk";
-		sloganNumber = 2;
-	} else if (sloganNumber === 2) {
-		sloganPrimary.innerHTML = "Participate in";
-		sloganSecondary.innerHTML = "presitigious tournaments";
-		sloganNumber = 3;
-	} else if (sloganNumber === 3) {
-		sloganPrimary.innerHTML = "Compete with";
-		sloganSecondary.innerHTML = "best football players";
-		sloganNumber = 4;
-	} else if (sloganNumber === 4) {
-		sloganPrimary.innerHTML = "Have a good time in";
-		sloganSecondary.innerHTML = "a friendly atmosphere";
-		sloganNumber = 1;
-	}
-	setTimeout(fadeout, 4250);
-}
-
-setInterval(sloganText, 5000);
+$('.competitions').on('click', 'li:not(#active)', function () {
+	$('#active').removeAttr('id');
+	$(this).attr('id', 'active');
+	tit = $(this).data("event");
+	$(this).append('<i class="fa fa-chevron-down"></i>');
+	$('.competitions li').removeAttr('style');
+	evra();
+});

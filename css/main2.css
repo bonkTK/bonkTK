@@ -65,14 +65,14 @@ span {
 	margin: 0 auto;
 	width: 100%;
 	background: #18232E;
-	border-bottom: solid 2px #F05843;
+	border-bottom: inset 2px #F05843;
 	box-shadow: 0 2px 10px rgba(21, 21, 21, .25);
 	z-index: 5;
 	overflow-y: scroll;
 }
 
 .page-header .container {
-	padding: 12px 20px;
+	padding: 6px 20px;
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
@@ -115,7 +115,7 @@ span {
 
 .menu .menu-btn {
 	border: solid 2px #F05843;
-	color: #F05843;
+	color: #EAFFF9;
 }
 
 .menu .menu-btn:hover {
@@ -124,7 +124,7 @@ span {
 }
 
 main {
-	height: calc(100vh - 80px - 36px);
+	height: calc(100vh - 70px);
 	overflow-y: scroll;
 }
 
@@ -139,22 +139,13 @@ main .container {
 	height: 100%;
 }
 
-.content-header {
-	font-size: 32px;
-	text-align: center;
-	color: #EAFFF9;
-	text-transform: uppercase;
-	text-shadow: 2px 2px 0 rgba(21, 21, 21, .5);
-	z-index: 2;
-	margin-bottom: 1em;
-}
-
 #slogan-text {
 	font-size: 60px;
 	font-weight: 700;
-	margin-bottom: 0;
 	padding: 0 10px;
 	opacity: 1;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0 rgba(21, 21, 21, .5);
 	transition: .75s opacity;
 }
 
@@ -168,7 +159,7 @@ main .container {
 	text-align: center;
 }
 
-.text-secondary {
+.text-secondary, .rank {
 	color: #F05843;
 }
 
@@ -180,26 +171,6 @@ main .container {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-}
-
-.owl-theme .owl-nav {
-	height: 0;
-}
-
-.owl-theme .owl-nav .fas {
-	font-size: 30px;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	text-shadow: 0 0 2px rgba(21, 21, 21, .25);
-}
-
-.owl-theme .owl-nav .fa-chevron-left {
-	left: -30px;
-}
-
-.owl-theme .owl-nav .fa-chevron-right {
-	right: -30px;
 }
 
 .feature-box {
@@ -231,7 +202,28 @@ main .container {
 	object-fit: contain;
 }
 
+.owl-theme .owl-nav {
+	height: 0;
+}
+
+.owl-theme .owl-nav .fas {
+	font-size: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-shadow: 0 0 2px rgba(21, 21, 21, .25);
+}
+
+.owl-theme .owl-nav .fa-chevron-left {
+	left: -30px;
+}
+
+.owl-theme .owl-nav .fa-chevron-right {
+	right: -30px;
+}
+
 .competitions {
+	width: 100%;
 	max-width: 900px;
 	margin: 0 auto 35px;
 }
@@ -240,6 +232,7 @@ main .container {
 .awards-list {
 	display: flex;
 	justify-content: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 }
 
@@ -255,12 +248,20 @@ main .container {
 	transition: .75s;
 	cursor: pointer;
 	text-transform: uppercase;
+	display: none;
 }
 
-.competitions .active,
-.competitions .active:hover {
+.competitions #active,
+.competitions #active:hover {
 	border: solid 2px #F05843;
-	color: #F05843;
+	color: #EAFFF9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fa-chevron-down {
+	margin-left: 5px;
 }
 
 .competitions li:hover {
@@ -278,7 +279,7 @@ main .container {
 }
 
 .season__box {
-	flex: 1 1 325px;
+	flex: 1 1 300px;
 	min-width: 300px;
 	max-width: 325px;
 	background: linear-gradient(to top, #18232E, #152331);
@@ -424,10 +425,10 @@ main .container {
 }
 
 .competition-info li {
-	background: rgba(240, 240, 240, .05);
-	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
+	background: #30455b;
+	box-shadow: 0 0 2px rgba(21, 21, 21, .5);
 	padding: 10px;
-	margin: 5px 0;
+	margin: 0 0 5px;
 }
 
 .player-box,
@@ -576,7 +577,7 @@ footer {
 	}
 
 	main .container {
-		padding: 10px 0;
+		padding: 20px 0;
 	}
 
 	.page-header {
@@ -599,9 +600,9 @@ footer {
 	.menu {
 		display: none;
 		position: static;
-		padding-top: 18px;
+		padding-top: 12px;
 	}
-
+	
 	.menu li {
 		display: block;
 		text-align: center;
@@ -622,7 +623,11 @@ footer {
 
 	#slogan-text,
 	.feature-boxes {
-		min-height: calc((100% - 80px - 36px)/2);
+		min-height: calc((100% - 70px)/2);
+	}
+
+	.competitions {
+		margin: 0 auto;
 	}
 
 	.competition-items div {

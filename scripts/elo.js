@@ -2,17 +2,13 @@ let hostIndex;
 let awayIndex;
 let names = [];
 
-const tournament = 20;
-const friendly = 10;
-
-
 let match = (host, hostElo, hostScore, away, awayElo, awayScore, comp) => {
 
 	let hostRes = 1;
 	let awayRes = 1;
 
-	let hostRank = Math.pow(10, hostElo / 200);
-	let awayRank = Math.pow(10, awayElo / 200);
+	let hostRank = Math.pow(10, hostElo / 400);
+	let awayRank = Math.pow(10, awayElo / 400);
 
 	let hostExpect = hostRank / (hostRank + awayRank);
 	let awayExpect = awayRank / (hostRank + awayRank);
@@ -20,23 +16,27 @@ let match = (host, hostElo, hostScore, away, awayElo, awayScore, comp) => {
 	if (hostScore > awayScore) {
 		hostRes = 1;
 		awayRes = 0;
+		newPlayers[hostIndex].wins++;
+		newPlayers[awayIndex].loses++;
 	} else if (awayScore > hostScore) {
 		hostRes = 0;
-		awayRes = 1;
+		awayRes = 1;;
+		newPlayers[hostIndex].loses++;
+		newPlayers[awayIndex].wins++;
 	} else {
 		hostRes = 0.5;
-		awayRes = 0.5;
+		awayRes = 0.5;;
+		newPlayers[hostIndex].draws++;
+		newPlayers[awayIndex].draws++;
 	}
 
 	let goalDiff = 1;
 	let res = Math.abs(hostScore - awayScore);
 
-	if (res === 1 || res === 0) {
+	if (res === 0) {
 		goalDiff = 1;
-	} else if (res === 2) {
-		goalDiff = 1.5;
 	} else {
-		goalDiff = (11 + (res)) / 8;
+		goalDiff = (11 + (res)) / 6;
 	}
 
 	names = newPlayers.map(function (item) {
@@ -49,16 +49,16 @@ let match = (host, hostElo, hostScore, away, awayElo, awayScore, comp) => {
 	let hostBoost = 1;
 	let awayBoost = 1;
 
-	if (newPlayers[hostIndex].matchesPlayed < 3) {
+	if (newPlayers[hostIndex].wins < 3) {
 		hostBoost = 2;
 	}
 
-	if (newPlayers[awayIndex].matchesPlayed < 3) {
+	if (newPlayers[awayIndex].wins < 3) {
 		awayBoost = 2;
 	}
 
-	let newHostElo = hostElo + comp * hostBoost * goalDiff * (hostRes - hostExpect);
-	let newAwayElo = awayElo + comp * awayBoost * goalDiff * (awayRes - awayExpect);
+	let newHostElo = Math.round(hostElo + comp * hostBoost * goalDiff * (hostRes - hostExpect));
+	let newAwayElo = Math.round(awayElo + comp * awayBoost * goalDiff * (awayRes - awayExpect));
 
 	if (hostElo < 100 && hostElo > newHostElo) {
 		newHostElo = hostElo;
@@ -76,118 +76,96 @@ let match = (host, hostElo, hostScore, away, awayElo, awayScore, comp) => {
 		newAwayElo = 100;
 	}
 
-
-	console.log(`${host} - ${newHostElo} ${hostElo}`);
-	console.log(`${away} - ${newAwayElo} ${awayElo}`);
-
-	newPlayers[hostIndex].rank = Math.round(newHostElo);
-	newPlayers[awayIndex].rank = Math.round(newAwayElo);
-	newPlayers[hostIndex].matchesPlayed++;
-	newPlayers[awayIndex].matchesPlayed++;
-
-}
-
-class players {
-	constructor(name, flag) {
-		this.name = name;
-		this.flag = flag;
-		this.rank = 0;
-		this.matchesPlayed = 0;
+	if (newHostElo > newPlayers[hostIndex].highestRank) {
+		newPlayers[hostIndex].highestRank = newHostElo;
 	}
-}
 
-const newPlayers = [
-   new players('Trxior', 'Poland'),
-   new players('zmudx', 'Poland'),
-   new players('GSpeku', 'Germany'),
-   new players('General_Richt', 'Russia'),
-   new players('frozenkiller', 'Netherlands'),
-   new players('Bunniesss', 'United-States'),
-   new players('Trocir', 'Serbia'),
-   new players('bbbZG', 'Croatia'),
-   new players('Pimpektron1', 'Serbia'),
-   new players('vAZz', 'Germany'),
-   new players('Bunniesss', 'United-States'),
-   new players('Trocir', 'Serbia'),
-   new players('bbbZG', 'Croatia'),
-   new players('Pimpektron1', 'Serbia'),
-   new players('vAZz', 'Germany'),
-];
-
-class matches {
-	constructor(host, hostScore, away, awayScore, competitions) {
-		this.host = host;
-		this.hostScore = hostScore;
-		this.away = away;
-		this.awayScore = awayScore;
-		this.competitions = competitions;
+	if (newAwayElo > newPlayers[awayIndex].highestRank) {
+		newPlayers[awayIndex].highestRank = newAwayElo;
 	}
+
+	newPlayers[hostIndex].rank = newHostElo;
+	newPlayers[awayIndex].rank = newAwayElo;
+	newPlayers[hostIndex].played++;
+	newPlayers[awayIndex].played++;
+	newPlayers[hostIndex].goalsScored += hostScore;
+	newPlayers[hostIndex].goalsConceded += awayScore;
+	newPlayers[awayIndex].goalsScored += awayScore;
+	newPlayers[awayIndex].goalsConceded += hostScore;
+
 }
 
-const newMatches = [
-   new matches('Trxior', 6, 'zmudx', 0, tournament),
-   new matches('Trxior', 6, 'Trocir', 0, tournament),
-   new matches('GSpeku', 6, 'zmudx', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('GSpeku', 6, 'zmudx', 0, tournament),
-   new matches('GSpeku', 6, 'zmudx', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 8, tournament),
-   new matches('Trxior', 6, 'Trocir', 6, tournament),
-   new matches('Trxior', 6, 'Trocir', 7, tournament),
-   new matches('Trxior', 0, 'General_Richt', 6, tournament),
-   new matches('Trxior', 6, 'zmudx', 1, tournament),
-   new matches('Trxior', 6, 'bbbZG', 7, tournament),
-   new matches('Trxior', 6, 'zmudx', 7, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-];
+let displayRanking = () => {
 
-for (let i = 0; i < newMatches.length; i++) {
+	for (let i = 0; i < newMatches.length; i++) {
 
-	let host = newMatches[i].host;
-	let away = newMatches[i].away;
+		let host = newMatches[i].host;
+		let away = newMatches[i].away;
 
-	names = newPlayers.map(function (item) {
-		return item['name'];
-	});
+		names = newPlayers.map(function (item) {
+			return item['name'];
+		});
 
-	hostIndex = names.indexOf(host);
-	awayIndex = names.indexOf(away);
+		hostIndex = names.indexOf(host);
+		awayIndex = names.indexOf(away);
 
-	match(newMatches[i].host, newPlayers[hostIndex].rank, newMatches[i].hostScore, newMatches[i].away, newPlayers[awayIndex].rank, newMatches[i].awayScore, newMatches[i].competitions);
+		match(newMatches[i].host, newPlayers[hostIndex].rank, newMatches[i].hostScore, newMatches[i].away, newPlayers[awayIndex].rank, newMatches[i].awayScore, newMatches[i].competitions);
 
-};
+	};
 
-let compareRank = (a, b) => {
-	return b.rank - a.rank;
-}
+	let compareName = (a, b) => {
+		var textA = a.name.toUpperCase();
+		var textB = b.name.toUpperCase();
+		return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+	}
 
-newPlayers.sort(compareRank);
+	let jebanie = (a, b) => {
+		return b.rank - a.rank || b.wins - a.wins || (b.goalsScored - b.goalsConceded) - (a.goalsScored - a.goalsConceded) || b.goalsScored - a.goalsScored || b.played - a.played || compareName(a, b);
+	};
 
-console.log(newPlayers);
+	newPlayers.sort(jebanie);
 
-let ladder = document.querySelector('.ladder-1v1');
+	let ladder = document.querySelector('.ladder-1v1');
 
-for (let i = 0, p = 1; i < newPlayers.length; i++, p++) {
+	for (let i = 0, p = 1; i < newPlayers.length; i++, p++) {
 
-	let playerBox = document.createElement('div');
-	
-		if (newPlayers[i].matchesPlayed >= 0) {
-	playerBox.innerHTML =
-		`
+		let playerBox = document.createElement('div');
+		let kurwy;
+		
+		if (newPlayers[i].rank >= 300) {
+			kurwy = `style="border-right: inset 2px #cc0088"`;
+		} else if (newPlayers[i].rank >= 225) {
+			kurwy = `style="border-right: inset 2px #ccaa22"`;
+		} else if (newPlayers[i].rank >= 150) {
+			kurwy = `style="border-right: inset 2px #ccc"`;
+		} else {
+			kurwy = `style="border-right: inset 2px #882200"`;
+		}
+		
+		let gD = newPlayers[i].goalsScored - newPlayers[i].goalsConceded;
+		
+		if (gD > 0) {
+			gD = `+${gD}`;
+		}
+
+		if (newPlayers[i].played >= 0) {
+			playerBox.innerHTML =
+				`
 		<div class="player-box">
-			<div class="position">${p}</div>
+			<div class="position" ${kurwy}>${p}</div>
 			<div class="player-right">
 				<div class="player-info">
 					<img src="img/${newPlayers[i].flag}.png">
 					<span class="name">${newPlayers[i].name}</span>
 				</div>
 				<div class="player-stats">
-					<span class="matches">${newPlayers[i].matchesPlayed}</span>
+					<span class="matches">${newPlayers[i].played}</span>
+					<span class="wins">${newPlayers[i].wins}</span>
+					<span class="draws">${newPlayers[i].draws}</span>
+					<span class="loses">${newPlayers[i].loses}</span>
+					<span class="scored">${newPlayers[i].goalsScored}</span>
+					<span class="conceded">${newPlayers[i].goalsConceded}</span>
+					<span class="goaldiff">${gD}</span>
 					<span class="rank">${newPlayers[i].rank}</span>
 				</div>
 			</div>
@@ -195,7 +173,86 @@ for (let i = 0, p = 1; i < newPlayers.length; i++, p++) {
 		`
 
 
-	ladder.appendChild(playerBox);
+			ladder.appendChild(playerBox);
 		};
 
+	};
+
 };
+
+let lastMatch = () => {
+
+	let matchesAm = newMatches.length - 1;
+
+	let names;
+	names = newPlayers.map(function (item) {
+		return item['name'];
+	});
+	let hoster = names.indexOf(newMatches[matchesAm].host);
+	let awayer = names.indexOf(newMatches[matchesAm].away);
+
+	let herz = `		
+<header class="box-header second-header"><span>Last match</span></header>
+<div class="player-box">
+	<div class="player-right">
+		<div class="player-info">
+			<img src="img/${newPlayers[hoster].flag}.png">
+			<span class="name">${newMatches[matchesAm].host}</span>
+		</div>
+
+		<div class="player-stats">
+			<span class="score">${newMatches[matchesAm].hostScore}</span>
+		</div>
+	</div>
+</div>
+<div class="player-box">
+	<div class="player-right">
+		<div class="player-info">
+			<img src="img/${newPlayers[awayer].flag}.png">
+			<span class="name">${newMatches[matchesAm].away}</span>
+		</div>
+
+		<div class="player-stats">
+			<span class="score">${newMatches[matchesAm].awayScore}</span>
+		</div>
+	</div>
+</div>
+`;
+	$('#last-match').html(herz);
+};
+
+lastMatch();
+
+let stats = (v, t) => {
+
+	let compareResult = (a, b) => {
+		return b[v] - a[v] || b.rank -a.rank;
+	};
+
+		newPlayers.sort(compareResult);
+
+	let elol = `
+<header class="box-header second-header"><span>${t}</span></header>
+<div class="player-box">
+	<div class="player-right">
+		<div class="player-info">
+			<img src="img/${newPlayers[0].flag}.png">
+			<span class="name">${newPlayers[0].name}</span>
+		</div>
+
+		<div class="player-stats">
+			<span class="score">${newPlayers[0][v]}</span>
+		</div>
+	</div>
+</div>
+`;
+	$(`#${v}`).html(elol);
+};
+
+
+displayRanking();
+
+stats('highestRank', 'Highest rank of all time');
+stats('played', 'Most matches played');
+stats('wins', 'Most matches won');
+stats('goalsScored', 'Most goals scored');
