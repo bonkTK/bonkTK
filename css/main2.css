@@ -19,9 +19,6 @@ body {
 	height: 100%;
 	width: 100%;
 	background-color: #152331;
-	background-image: url("../img/bg.png");
-	background-size: auto;
-	background-position: center;
 	position: relative;
 	z-index: 0;
 	height: 100vh;
@@ -49,6 +46,21 @@ a {
 
 span {
 	display: block;
+}
+
+.text-primary {
+	color: #EFD05F;
+}
+
+.text-description {
+	max-width: 90%;
+	margin-top: 1em;
+	text-align: center;
+}
+
+.text-secondary,
+.rank {
+	color: #F05843;
 }
 
 .container {
@@ -139,6 +151,12 @@ main .container {
 	height: 100%;
 }
 
+.slogan header {
+	background: url("../img/bonko.png") no-repeat;
+	background-size: 90%;
+	background-position: center;
+}
+
 #slogan-text {
 	font-size: 60px;
 	font-weight: 700;
@@ -150,22 +168,7 @@ main .container {
 	text-align: center;
 }
 
-.text-primary {
-	color: #EFD05F;
-}
-
-.text-description {
-	max-width: 90%;
-	margin-top: 1em;
-	text-align: center;
-}
-
-.text-secondary,
-.rank {
-	color: #F05843;
-}
-
-#slogan-text,
+.slogan header,
 .feature-boxes {
 	height: 50%;
 	width: 100%;
