@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="pl">
-
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Bonk.io - Football</title>
-	<meta name="description" content="">
+	<meta name="description" content="International bonk.io football community which brings together the best players in the world and organizes prestigious tournaments of all types.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -15,7 +14,6 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 </head>
-
 <body>
 	<div id="app">
 
@@ -78,38 +76,8 @@
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="scripts/owl.carousel.min.js"></script>
+	<script src="scripts/homepage.js"></script>
 	<script src="scripts/carousel.js"></script>
-	<script>
-		let sN = 0;
-		let sloganTexts = document.getElementById('slogan-text');
-
-		const slg = [
-			['Welcome to', 'the bonk.tk'],
-			['Participate in', 'presitigious tournaments'],
-			['Compete with', 'best football players'],
-			['Have a good time in', 'a friendly atmosphere']
-		];
-
-		let sloganText = () => {
-			setTimeout(() => {
-				sloganTexts.style.opacity = '1';
-			}, 25);
-
-			let slgNumber = slg[sN];
-			sloganTexts.innerHTML = `<span>${slgNumber[0]}</span><span class="text-secondary">${slgNumber[1]}</span>`
-			sN++;
-
-			if (sN === slg.length) {
-				sN = 0;
-			}
-
-			setTimeout(() => {
-				sloganTexts.style.opacity = '0';
-			}, 4250);
-		}
-
-		setInterval(sloganText, 5000);
-	</script>
 </body>
 
 </html>

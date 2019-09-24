@@ -10,7 +10,7 @@ class competition {
 let season = ['23 Jun - 8 Jul 2017', '13 Jul - 31 Jul 2017', '1 Aug - 15 Aug 2017', '15 Aug - 31 Aug 2017', '10 Sep - 1 Oct 2017', '25 Oct - 3 Dec 2017', '15 Dec - 31 Dec 2017']
 
 const newCompetition = [
-
+	
 	/* League 1vs1 */
    new competition('league-1vs1', 'League 1vs1', season[1], [['zmudx'], ['Trxior'], ['Bunniesss']]),
    new competition('league-1vs1', 'League 1vs1', season[2], [['Trxior'], ['Bunniesss'], ['zmudx']]),
@@ -57,16 +57,12 @@ const newCompetition = [
    new competition('tournaments-2vs2', 'Autumn Cup 2vs2', '11 Nov 2017', [['General_Richt', 'GSpeku'], ['TheAngryBull', 'Trxior'], ['Miinato', 'R3YM4Rjr']]),
    new competition('tournaments-2vs2', 'November 2vs2', '25 Nov 2017', [['TheAngryBull', 'Trxior'], ['RaV8', 'zmudx'], ['GSpeku', 'Le Createur']]),
    new competition('tournaments-2vs2', 'December 2vs2', '16 Dec 2017', [['R3YM4Rjr', 'Trxior'], ['captainvodka', 'GSpeku'], ['merlin67', 'XClutch2']]),
-]
+];
 
-let tit = `league-1vs1`;
-let titPd;
-let awaPd;
+let tournamentType = `league-1vs1`, titPd, awaPd;
+let newSeasonBox = (n) => {
 
-let jeb = (n) => {
-
-	let bk = ``;
-	switch (tit) {
+	switch (tournamentType) {
 		case 'league-1vs1':
 			titPd = ['Champion', '2nd place', '3rd place'];
 			awaPd = [['crown', 'first-place'], ['second-place'], ['third-place']];
@@ -101,8 +97,8 @@ let jeb = (n) => {
 			break;
 		default:
 	};
-
-	let compTitle = `
+	
+	let bk = ``, compTitle = `
 		<div class="season__title">
 			<h2>${newCompetition[n].name}</h2>
 			<h3>${newCompetition[n].date}</h3>
@@ -111,22 +107,16 @@ let jeb = (n) => {
 
 	for (let i = 0; i < newCompetition[n].podium.length; i++) {
 
-		let jb = ``;
-		let ec = ``;
-		let eb;
-		let gl;
-
+		let jb = ``, ec = ``;
 		for (let j = 0; j < awaPd[i].length; j++) {
-			eb = `
+			let eb = `
 				<span class="award"><img src="img/${awaPd[i][j]}.png"></span>
 			`;
 			jb += eb;
-		}
+		};
 
 		for (let k = 0; k < newCompetition[n].podium[i].length; k++) {
-
-			let names;
-			names = newPlayers.map(function (item) {
+			let names = newPlayers.map(function (item) {
 				return item['name'];
 			});
 			names = names.indexOf(newCompetition[n].podium[i][k]);
@@ -153,7 +143,7 @@ let jeb = (n) => {
 		</div>
 	`;
 		bk += compList;
-	}
+	};
 
 	let compBox = `
 		<section class="season__box">
@@ -161,17 +151,18 @@ let jeb = (n) => {
 		 ${bk}
 		</section>
 	`;
-
 	$(compBox).appendTo('.awards-list');
-}
+};
 
-let evra = () => {
+let displayAwards = () => {
 	$('.season__box').remove();
 	for (let i = 0; i < newCompetition.length; i++) {
-		if (newCompetition[i].type === tit) {
-			jeb(i);
+		if (newCompetition[i].type === tournamentType) {
+			newSeasonBox(i);
 		}
 	};
 };
 
-evra();
+$(function() {
+	displayAwards();
+});

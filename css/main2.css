@@ -125,7 +125,7 @@ span {
 
 main {
 	height: calc(100vh - 70px);
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 main .container {
@@ -160,7 +160,8 @@ main .container {
 	text-align: center;
 }
 
-.text-secondary, .rank {
+.text-secondary,
+.rank {
 	color: #F05843;
 }
 
@@ -572,17 +573,22 @@ footer {
 /*Mobile view*/
 
 @media (max-width: 640px) {
-	
-.player-stats .mobile-hidden {
+
+	.player-stats .mobile-hidden {
 		display: none;
 	}
 }
-	
-	
+
+
 @media (max-width: 768px) {
 
 	main::-webkit-scrollbar {
 		display: none;
+	}
+
+	main {
+		height: calc(100vh - 70px);
+		overflow-y: auto;
 	}
 
 	main .container {
@@ -590,7 +596,7 @@ footer {
 	}
 
 	.page-header {
-		padding-right: 0;
+		overflow-y: auto;
 	}
 
 	.page-header .container {
@@ -611,7 +617,7 @@ footer {
 		position: static;
 		padding-top: 12px;
 	}
-	
+
 	.menu li {
 		display: block;
 		text-align: center;

@@ -55,33 +55,22 @@ class matches {
 		this.away = away;
 		this.awayScore = awayScore;
 		this.competitions = competitions;
-        newMatches.push(this);
+		newMatches.push(this);
 	}
 }
 
-const tournament = 30;
-const friendly = 20;
-let som;
-let playerA;
-let playerB;
-let playerAname;
-let playerBname;
-let resultA;
-let resultB;
+const tournament = 30,
+	friendly = 20;
+let som, playerA, playerB, playerAname, playerBname, resultA, resultB;
 
 for (let i = 0; i < 2500; i++) {
-	
-playerA = Math.floor((Math.random() * newPlayers.length));
-playerB = Math.floor((Math.random() * newPlayers.length));
-resultA = Math.floor((Math.random() * 3) + 4);
-resultB = Math.floor((Math.random() * 2) + 3);
+	playerA = Math.floor((Math.random() * newPlayers.length));
+	playerB = Math.floor((Math.random() * newPlayers.length));
+	resultA = Math.floor((Math.random() * 3) + 4);
+	resultB = Math.floor((Math.random() * 2) + 3);
 
-som = [
-   new matches(newPlayers[playerA].name, resultA, newPlayers[playerB].name, resultB, tournament),
-];
-	
-}
-
+	som = [new matches(newPlayers[playerA].name, resultA, newPlayers[playerB].name, resultB, tournament)];
+};
 
 /*
 class matches {
