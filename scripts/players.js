@@ -44,9 +44,10 @@ const newPlayers = [
    new players('Le Createur', 'United-States'),
    new players('XClutch2', 'United-States'),
    new players('Alex2810', 'Canada'),
+   new players('bonk.tk', 'ribbon'),
 ];
 
-let newMatches = [];
+/*let newMatches = [];
 
 class matches {
 	constructor(host, hostScore, away, awayScore, competitions) {
@@ -54,13 +55,10 @@ class matches {
 		this.hostScore = hostScore;
 		this.away = away;
 		this.awayScore = awayScore;
-		this.competitions = competitions;
 		newMatches.push(this);
 	}
 }
 
-const tournament = 30,
-	friendly = 20;
 let som, playerA, playerB, playerAname, playerBname, resultA, resultB;
 
 for (let i = 0; i < 2500; i++) {
@@ -69,10 +67,9 @@ for (let i = 0; i < 2500; i++) {
 	resultA = Math.floor((Math.random() * 3) + 4);
 	resultB = Math.floor((Math.random() * 2) + 3);
 
-	som = [new matches(newPlayers[playerA].name, resultA, newPlayers[playerB].name, resultB, tournament)];
-};
+	som = [new matches(newPlayers[playerA].name, resultA, newPlayers[playerB].name, resultB)];
+};*/
 
-/*
 class matches {
 	constructor(host, hostScore, away, awayScore, competitions) {
 		this.host = host;
@@ -83,43 +80,7 @@ class matches {
 	}
 }
 
-const tournament = 16;
-const friendly = 8;
-
 const newMatches = [
-   new matches('Trxior', 6, 'zmudx', 0, tournament),
-   new matches('Trxior', 6, 'Trocir', 0, tournament),
-   new matches('GSpeku', 6, 'zmudx', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('GSpeku', 6, 'zmudx', 0, tournament),
-   new matches('GSpeku', 6, 'zmudx', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 0, 'GSpeku', 6, tournament),
-   new matches('Trxior', 4, 'Trocir', 6, tournament),
-   new matches('Trxior', 0, 'General_Richt', 6, tournament),
-   new matches('Trxior', 6, 'zmudx', 1, tournament),
-   new matches('Trxior', 2, 'bbbZG', 5, tournament),
-   new matches('Trxior', 2, 'zmudx', 5, tournament),
-   new matches('Trxior', 2, 'GSpeku', 6, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 0, tournament),
-   new matches('Trxior', 6, 'GSpeku', 2, tournament),
-   new matches('XClutch2', 4, 'Victom', 3, tournament),
-   new matches('XClutch2', 4, 'Victom', 3, tournament),
-   new matches('XClutch2', 4, 'Nemenick', 3, tournament),
-   new matches('XClutch2', 4, 'zmudx', 6, tournament),
-   new matches('Trxior', 4, 'zmudx', 6, tournament),
-   new matches('Nub1', 4, 'zmudx', 6, tournament),
-   new matches('Nub1', 4, 'Trxior', 4, tournament),
-   new matches('Nub1', 4, 'Trocir', 4, tournament),
-   new matches('Nub1', 4, 'Trocir', 6, tournament),
-   new matches('Nub1', 4, 'Trocir', 6, tournament),
-   new matches('Nub1', 4, 'Trocir', 3, tournament),
-   new matches('Nub1', 4, 'Nemenick', 3, tournament),
-   new matches('Nub1', 4, 'XClutch2', 3, tournament),
-   new matches('Nub1', 4, 'Trxior', 3, tournament),
-   new matches('RaV8', 4, 'Trxior', 3, tournament),
-   new matches('RaV8', 4, 'bbbZG', 3, tournament),
-];*/
+   new matches('Trxior', 6, 'bonk.tk', 0),
+   new matches('zmudx', 6, 'bonk.tk', 0),
+];

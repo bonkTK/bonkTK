@@ -1,15 +1,17 @@
 let hostIndex, awayIndex, names = [];
 
-let match = (host, hostElo, hostScore, away, awayElo, awayScore, comp) => {
+let match = (host, hostElo, hostScore, away, awayElo, awayScore) => {
+
+	names = newPlayers.map(function (item) {
+		return item['name'];
+	});
+
+	hostIndex = names.indexOf(host), awayIndex = names.indexOf(away);
 
 	let hostRes = 1,
-		awayRes = 1;
-
-	let hostRank = Math.pow(10, hostElo / 400),
-		awayRank = Math.pow(10, awayElo / 400);
-
-	let hostExpect = hostRank / (hostRank + awayRank),
-		awayExpect = awayRank / (hostRank + awayRank);
+		awayRes = 1,
+		hostBoost = 20,
+		awayBoost = 20;
 
 	if (hostScore > awayScore) {
 		hostRes = 1, awayRes = 0;
@@ -18,42 +20,28 @@ let match = (host, hostElo, hostScore, away, awayElo, awayScore, comp) => {
 		hostRes = 0, awayRes = 1;
 		newPlayers[hostIndex].loses++, newPlayers[awayIndex].wins++;
 	} else {
-		hostRes = 0.5, awayRes = 0.5;;
+		hostRes = 0.5, awayRes = 0.5;
 		newPlayers[hostIndex].draws++, newPlayers[awayIndex].draws++;
-	}
-
-	let goalDiff = 1,
-		res = Math.abs(hostScore - awayScore);
-
-	if (res === 0) {
-		goalDiff = 1;
-	} else {
-		goalDiff = (11 + (res)) / 6;
-	}
-
-	names = newPlayers.map(function (item) {
-		return item['name'];
-	});
-
-	hostIndex = names.indexOf(host), awayIndex = names.indexOf(away);
-
-	let hostBoost = 1,
-		awayBoost = 1;
+	};
 
 	if (newPlayers[hostIndex].played < 5) {
-		hostBoost = 3;
+		hostBoost = 60;
 	} else if (newPlayers[hostIndex].played < 10) {
-		hostBoost = 2;
-	}
+		hostBoost = 40;
+	};
 
 	if (newPlayers[awayIndex].played < 5) {
-		awayBoost = 3;
+		awayBoost = 60;
 	} else if (newPlayers[awayIndex].played < 10) {
-		awayBoost = 2;
-	}
+		awayBoost = 40;
+	};
 
-	let newHostElo = Math.round(hostElo + comp * hostBoost * goalDiff * (hostRes - hostExpect)),
-		newAwayElo = Math.round(awayElo + comp * awayBoost * goalDiff * (awayRes - awayExpect));
+	let hostExpect = 1 / (1 + Math.pow(10, -(hostElo - awayElo) / 400)),
+		awayExpect = 1 / (1 + Math.pow(10, -(awayElo - hostElo) / 400)),
+		res = Math.abs(hostScore - awayScore),
+		goalDiff = (11 + res) / 8,
+		newHostElo = Math.round(hostElo + hostBoost * goalDiff * (hostRes - hostExpect)),
+		newAwayElo = Math.round(awayElo + awayBoost * goalDiff * (awayRes - awayExpect));
 
 	if (hostElo < 100 && hostElo > newHostElo) {
 		newHostElo = hostElo;
@@ -113,7 +101,7 @@ let displayRanking = () => {
 
 	let ladder = document.querySelector('.ladder-1v1');
 
-	for (let i = 0, p = 1; i < newPlayers.length; i++, p++) {
+	for (let i = 0, p = 0; i < newPlayers.length; i++) {
 
 		let playerBox = document.createElement('div'),
 			tier;
@@ -136,7 +124,8 @@ let displayRanking = () => {
 			gD = `+${gD}`;
 		}
 
-		if (newPlayers[i].played >= 0) {
+		if (newPlayers[i].played > 0) {
+			p++;
 			playerBox.innerHTML =
 				`
 		<div class="player-box">
@@ -175,7 +164,8 @@ let latestMatch = () => {
 	let latestHost = names.indexOf(newMatches[matchesAll].host),
 		latestAway = names.indexOf(newMatches[matchesAll].away);
 
-	let latestMatchBox = `		
+	let latestMatchBox = `
+<div id="latest-match">
 <header class="box-header second-header"><span>Latest match</span></header>
 <div class="player-box">
 	<div class="player-right">
@@ -201,8 +191,9 @@ let latestMatch = () => {
 		</div>
 	</div>
 </div>
+</div>
 `;
-	$('#latest-match').html(latestMatchBox);
+	$('.competition-info').append(latestMatchBox);
 };
 
 let stats = (v, t) => {
@@ -213,6 +204,7 @@ let stats = (v, t) => {
 	newPlayers.sort(compareResult);
 
 	let indivStats = `
+<div id="${v}">
 <header class="box-header second-header"><span>${t}</span></header>
 <div class="player-box">
 	<div class="player-right">
@@ -226,14 +218,15 @@ let stats = (v, t) => {
 		</div>
 	</div>
 </div>
+</div>
 `;
-	$(`#${v}`).html(indivStats);
+	$('.competition-info').append(indivStats);
 };
 
 $(function () {
 	displayRanking();
 	latestMatch();
-	stats('highestRank', 'Highest rank of all time');
+	stats('highestRank', 'Highest ELO of all time');
 	stats('played', 'Most matches played');
 	stats('wins', 'Most matches won');
 	stats('goalsScored', 'Most goals scored');

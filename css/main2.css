@@ -75,6 +75,8 @@ span {
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 auto;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	background: #18232E;
 	border-bottom: inset 2px #F05843;
@@ -136,7 +138,8 @@ span {
 }
 
 main {
-	height: calc(100vh - 70px);
+	padding-top: 70px;
+	height: 100vh;
 	overflow-y: auto;
 }
 
@@ -151,9 +154,9 @@ main .container {
 	height: 100%;
 }
 
-.slogan header {
+.slogan-box {
 	background: url("../img/bonko.png") no-repeat;
-	background-size: 90%;
+	background-size: auto 100%;
 	background-position: center;
 }
 
@@ -168,7 +171,7 @@ main .container {
 	text-align: center;
 }
 
-.slogan header,
+.slogan-box,
 .feature-boxes {
 	height: 50%;
 	width: 100%;
@@ -188,7 +191,7 @@ main .container {
 	margin: 0 auto;
 }
 
-.feature-box span {
+.feature-box p {
 	text-align: center;
 	font-size: 22px;
 	text-transform: uppercase;
@@ -249,7 +252,7 @@ main .container {
 	padding: 6px 12px;
 	margin: 5px;
 	text-align: center;
-	box-shadow: 0 0 4px rgba(21, 21, 21, .75);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
 	transition: .75s;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -288,7 +291,7 @@ main .container {
 	min-width: 300px;
 	max-width: 325px;
 	background: linear-gradient(to top, #18232E, #152331);
-	box-shadow: 0 0 20px rgba(21, 21, 21, .5);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
 	border: solid 2px #F05843;
 	z-index: 2;
 	margin: 20px;
@@ -336,7 +339,7 @@ main .container {
 .leader,
 .discord-app {
 	margin: 10px;
-	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
 }
 
 .competition-info {
@@ -344,7 +347,7 @@ main .container {
 	margin: 10px;
 	background: #263749;
 	border: solid 2px #131c25;
-	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
 }
 
 .competition-items {
@@ -355,7 +358,7 @@ main .container {
 }
 
 .competition-items a {
-	box-shadow: 0 0 5px rgba(21, 21, 21, .5);
+	box-shadow: 0 0 5px rgba(21, 21, 21, .25);
 	flex: 1 1 0;
 	margin: 10px;
 	min-width: 300px;
@@ -431,7 +434,7 @@ main .container {
 
 .competition-info li {
 	background: #30455b;
-	box-shadow: 0 0 2px rgba(21, 21, 21, .5);
+	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
 	padding: 10px;
 	margin: 0 0 5px;
 }
@@ -439,7 +442,7 @@ main .container {
 .player-box,
 .box-header {
 	background: #263749;
-	box-shadow: 0 0 2px rgba(21, 21, 21, 0.5);
+	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
 	min-height: 50px;
 	width: 100%;
 	margin: 0 auto;
@@ -558,19 +561,7 @@ widgetbot {
 	max-width: 192px;
 	max-height: 192px;
 	border-radius: 192px;
-	box-shadow: 0 0 2px rgba(21, 21, 21, .5);
-}
-
-footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding: 10px;
-	background: #18232E;
-	box-shadow: 0 0 2px rgba(21, 21, 21, .5);
-	font-size: 14px;
+	box-shadow: 0 0 2px rgba(21, 21, 21, .25);
 }
 
 /*Mobile view*/
@@ -582,16 +573,10 @@ footer {
 	}
 }
 
-
 @media (max-width: 768px) {
 
 	main::-webkit-scrollbar {
 		display: none;
-	}
-
-	main {
-		height: calc(100vh - 70px);
-		overflow-y: auto;
 	}
 
 	main .container {
@@ -639,9 +624,9 @@ footer {
 		font-size: 32px;
 	}
 
-	#slogan-text,
+	.slogan-box,
 	.feature-boxes {
-		min-height: calc((100% - 70px)/2);
+		min-height: calc(100% / 2);
 	}
 
 	.competitions {
