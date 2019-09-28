@@ -46,6 +46,10 @@ const newPlayers = [
    new players('Alex2810', 'Canada'),
    new players('xXGET REKTXx', 'United-States'),
    new players('Chiilzz', 'United-States'),
+   new players('13wbaldwi', 'United-Kingdom'),
+   new players('Rick1985', 'United-States'),
+   new players('ACS v2', 'United-States'),
+   new players('XXSPINWHEELXX', 'United-States'),
 ];
 
 class matches {
@@ -60,4 +64,5 @@ class matches {
 
 const newMatches = [
    new matches('Alex2810', 5, 'Chiilzz', 3),
+   new matches('ACS v2', 5, 'Rick1985', 1),
 ];
