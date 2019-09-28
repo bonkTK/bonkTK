@@ -61,4 +61,5 @@ class matches {
 const newMatches = [
    new matches('Alex2810', 5, 'Chiilzz', 3),
    new matches('ACS v2', 6, 'Rick1985', 1),
+   new matches('Chiilzz', 6, 'Rick1985', 1),
 ];
