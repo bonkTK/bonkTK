@@ -24,6 +24,14 @@ let match = (host, hostElo, hostScore, away, awayElo, awayScore) => {
 		newPlayers[hostIndex].draws++, newPlayers[awayIndex].draws++;
 	};
 
+	if (newPlayers[hostIndex].played === 0) {
+		hostElo++;
+	};
+	
+	if (newPlayers[awayIndex].played === 0) {
+		awayElo++;
+	};
+
 	if (newPlayers[hostIndex].played < 5) {
 		hostBoost = 60;
 	} else if (newPlayers[hostIndex].played < 10) {
@@ -124,7 +132,7 @@ let displayRanking = () => {
 			gD = `+${gD}`;
 		}
 
-		if (newPlayers[i].played > 0) {
+		if (newPlayers[i].played >= 0) {
 			p++;
 			playerBox.innerHTML =
 				`
