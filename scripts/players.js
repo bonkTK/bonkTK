@@ -44,31 +44,9 @@ const newPlayers = [
    new players('Le Createur', 'United-States'),
    new players('XClutch2', 'United-States'),
    new players('Alex2810', 'Canada'),
-   new players('bonk.tk', 'ribbon'),
+   new players('xXGET REKTXx', 'United-States'),
+   new players('Chiilzz', 'United-States'),
 ];
-
-/*let newMatches = [];
-
-class matches {
-	constructor(host, hostScore, away, awayScore, competitions) {
-		this.host = host;
-		this.hostScore = hostScore;
-		this.away = away;
-		this.awayScore = awayScore;
-		newMatches.push(this);
-	}
-}
-
-let som, playerA, playerB, playerAname, playerBname, resultA, resultB;
-
-for (let i = 0; i < 2500; i++) {
-	playerA = Math.floor((Math.random() * newPlayers.length));
-	playerB = Math.floor((Math.random() * newPlayers.length));
-	resultA = Math.floor((Math.random() * 3) + 4);
-	resultB = Math.floor((Math.random() * 2) + 3);
-
-	som = [new matches(newPlayers[playerA].name, resultA, newPlayers[playerB].name, resultB)];
-};*/
 
 class matches {
 	constructor(host, hostScore, away, awayScore, competitions) {
@@ -81,6 +59,5 @@ class matches {
 }
 
 const newMatches = [
-   new matches('Trxior', 6, 'bonk.tk', 0),
-   new matches('zmudx', 6, 'bonk.tk', 0),
+   new matches('Alex2810', 5, 'Chiilzz', 3),
 ];
