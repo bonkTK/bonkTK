@@ -1,26 +1,5 @@
 $(function () {
 
-	$('.owl-features').owlCarousel({
-		loop: true,
-		nav: true,
-		navText: [`<i class="fas fa-chevron-left"></i>`, `<i class="fas fa-chevron-right"></i>`],
-		margin: 20,
-		autoplay: true,
-		autoplayTimeout: 5000,
-		smartSpeed: 1000,
-		dots: false,
-		responsiveClass: true,
-		responsive: {
-			0: {
-				items: 1,
-				nav: false
-			},
-			768: {
-				items: 2
-			}
-		}
-	});
-
 	let sN = 0;
 	const slg = [
 			['Welcome to', 'the bonk.tk'],
@@ -30,15 +9,17 @@ $(function () {
 		];
 
 	let sloganBox = `
-	<div class="slogan-box">
-		<h2 id="slogan-text">
-			<span id="slogan-primary"></span>
-			<span id="slogan-secondary" class="text-secondary"></span>
-		</h2>
-	</div>
+	<section class="container">
+		<div class="slogan-box">
+			<h2 id="slogan-text">
+				<span id="slogan-primary"></span>
+				<span id="slogan-secondary" class="text-secondary"></span>
+			</h2>
+		</div>
+	</section>
 	`;
 
-	$('.slogan').prepend(sloganBox);
+	$('main').prepend(sloganBox);
 
 
 	$('#slogan-text').html(`<span>${slg[0][0]}</span><span class="text-secondary">${slg[0][1]}</span>`);

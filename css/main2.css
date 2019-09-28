@@ -150,18 +150,21 @@ main .container {
 	flex-direction: column;
 }
 
-.slogan {
-	height: 100%;
+main .container:nth-child(even) {
+	background: #122335;
+	max-width: 100%;
 }
 
 .slogan-box {
+	height: 400px;
+	margin-bottom: 60px;
 	background: url("../img/bonko.png") no-repeat;
 	background-size: auto 100%;
 	background-position: center;
 }
 
 #slogan-text {
-	font-size: 60px;
+	font-size: 56px;
 	font-weight: 700;
 	padding: 0 10px;
 	opacity: 1;
@@ -171,14 +174,36 @@ main .container {
 	text-align: center;
 }
 
-.slogan-box,
-.feature-boxes {
-	height: 50%;
-	width: 100%;
+.feature-boxes,
+.slogan-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	width: 100%;
+}
+
+.section-header {
+	font-size: 32px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.section-header:after {
+	display: block;
+	content: "";
+	height: 1px;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	max-width: 400px;
+	margin: 20px auto 30px;
+}
+
+.ficzers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 900px;
 }
 
 .feature-box {
@@ -187,13 +212,14 @@ main .container {
 	align-items: center;
 	flex-direction: column;
 	padding: 15px;
-	max-width: 350px;
-	margin: 0 auto;
+	flex: 1 1 350px;
+	max-width: 375px;
+	margin: 30px;
 }
 
 .feature-box p {
 	text-align: center;
-	font-size: 22px;
+	font-size: 20px;
 	text-transform: uppercase;
 }
 
@@ -208,26 +234,6 @@ main .container {
 	max-height: 96px;
 	margin-bottom: 10px;
 	object-fit: contain;
-}
-
-.owl-theme .owl-nav {
-	height: 0;
-}
-
-.owl-theme .owl-nav .fas {
-	font-size: 30px;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	text-shadow: 0 0 2px rgba(21, 21, 21, .25);
-}
-
-.owl-theme .owl-nav .fa-chevron-left {
-	left: -30px;
-}
-
-.owl-theme .owl-nav .fa-chevron-right {
-	right: -30px;
 }
 
 .competitions {
@@ -365,7 +371,7 @@ main .container {
 	height: 225px;
 	border: solid 2px #131c25;
 	text-transform: uppercase;
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: 500;
 	background-image: url("../img/bonczek.png");
 	background-repeat: no-repeat;
@@ -612,10 +618,6 @@ widgetbot {
 		font-size: 20px;
 	}
 
-	.menu-btn {
-		display: none;
-	}
-
 	.content-header {
 		font-size: 24px;
 	}
@@ -624,9 +626,12 @@ widgetbot {
 		font-size: 32px;
 	}
 
-	.slogan-box,
-	.feature-boxes {
-		min-height: calc(100% / 2);
+	.section-header {
+		font-size: 24px;
+	}
+
+	.feature-box {
+		margin: 15px;
 	}
 
 	.competitions {
