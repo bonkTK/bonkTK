@@ -21,7 +21,7 @@ const newPlayers = [
    new players('GSpeku', 'Germany'),
    new players('Bunniesss', 'United-States'),
    new players('Trocir', 'Serbia'),
-   new players('bbbZG', 'Croatia'),
+   new players('bbb86', 'Croatia'),
    new players('Pimpektron1', 'Serbia'),
    new players('leftright', 'Albania'),
    new players('Nub1', 'Lebanon'),
