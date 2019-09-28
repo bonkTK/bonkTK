@@ -16,7 +16,6 @@ class players {
 const newPlayers = [
    new players('Trxior', 'Poland'),
    new players('zmudx', 'Poland'),
-   new players('klajster', 'Poland'),
    new players('General_Richt', 'Russia'),
    new players('GSpeku', 'Germany'),
    new players('Bunniesss', 'United-States'),
