@@ -53,6 +53,10 @@ const newPlayers = [
    new players('I Anger People', 'United-States'),
    new players('NJDevil', 'United-States'),
    new players('Smiley Smiley 2', 'Ireland'),
+   new players('lévin', 'Turkey'),
+   new players('Thetrueninja101', 'United-States'),
+   new players('NeyM1TOoficial', 'Brazil'),
+   new players('Netzz XII', 'Brazil'),
 ];
 
 class matches {
