@@ -38,7 +38,7 @@ const newPlayers = [
    new players('merlin67', 'Iran'),
    new players('Le Createur', 'United-States'),
    new players('XClutch2', 'United-States'),
-   new players('Alex2810', 'Canada'),
+   new players('Alex28102', 'Canada'),
    new players('xXGET REKTXx', 'United-States'),
    new players('Chiilzz', 'United-States'),
    new players('13wbaldwi', 'United-Kingdom'),
@@ -47,7 +47,7 @@ const newPlayers = [
    new players('XXSPINWHEELXX', 'United-States'),
    new players('didisiah', 'United-States'),
    new players('coldrex', 'Tunisia'),
-   new players('FlyJam', 'United-States'),
+   new players('FIyJam', 'United-States'),
    new players('xCapone', 'Kazakhstan'),
    new players('jgameplayer', 'Colombia'),
    new players('I Anger People', 'United-States'),
@@ -70,9 +70,12 @@ class matches {
 }
 
 const newMatches = [
-   new matches('Alex2810', 5, 'Chiilzz', 3),
+   new matches('Alex28102', 5, 'Chiilzz', 3),
    new matches('ACS v2', 6, 'Rick1985', 1),
    new matches('Chiilzz', 6, 'Rick1985', 1),
-   new matches('ACS v2', 2, 'Alex2810', 6),
-   new matches('coldrex', 3, 'Alex2810', 6),
+   new matches('ACS v2', 2, 'Alex28102', 6),
+   new matches('coldrex', 3, 'Alex28102', 6),
+   new matches('Chiilzz', 0, 'Netzz II', 6),
+   new matches('Alex28102', 3, 'FIyJam', 6),
+   new matches('jgameplayer', 3, 'Netzz II', 6),
 ];
