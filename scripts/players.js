@@ -47,6 +47,12 @@ const newPlayers = [
    new players('XXSPINWHEELXX', 'United-States'),
    new players('didisiah', 'United-States'),
    new players('coldrex', 'Tunisia'),
+   new players('FlyJam', 'United-States'),
+   new players('xCapone', 'Kazakhstan'),
+   new players('jgameplayer', 'Colombia'),
+   new players('I Anger People', 'United-States'),
+   new players('NJDevil', 'United-States'),
+   new players('Smiley Smiley 2', 'Ireland'),
 ];
 
 class matches {
