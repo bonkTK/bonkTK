@@ -56,7 +56,7 @@ const newPlayers = [
    new players('lévin', 'Turkey'),
    new players('Thetrueninja101', 'United-States'),
    new players('NeyM1TOoficial', 'Brazil'),
-   new players('Netzz XII', 'Brazil'),
+   new players('Netzz II', 'Brazil'),
 ];
 
 class matches {
