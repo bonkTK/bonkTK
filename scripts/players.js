@@ -78,4 +78,6 @@ const newMatches = [
    new matches('Chiilzz', 0, 'Netzz II', 6),
    new matches('Alex28102', 3, 'FIyJam', 6),
    new matches('jgameplayer', 3, 'Netzz II', 6),
+   new matches('jgameplayer', 4, 'FIyJam', 6),
+   new matches('I Anger People', 3, 'FIyJam', 5),
 ];
