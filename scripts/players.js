@@ -57,6 +57,9 @@ const newPlayers = [
    new players('Thetrueninja101', 'United-States'),
    new players('NeyM1TOoficial', 'Brazil'),
    new players('Netzz II', 'Brazil'),
+   new players('The Reds__', 'Brazil'),
+   new players('sGap_Striker', 'Brazil'),
+   new players('Bolo_lendario', 'Brazil'),
 ];
 
 class matches {
