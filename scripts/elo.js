@@ -25,11 +25,11 @@ let match = (host, hostElo, hostScore, away, awayElo, awayScore) => {
 	};
 
 	if (newPlayers[hostIndex].played === 0) {
-		hostElo++;
+		hostElo = 10;
 	};
 	
 	if (newPlayers[awayIndex].played === 0) {
-		awayElo++;
+		awayElo = 10;
 	};
 
 	if (newPlayers[hostIndex].played < 5) {
