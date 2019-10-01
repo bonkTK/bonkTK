@@ -60,6 +60,10 @@ const newPlayers = [
    new players('The Reds__', 'Brazil'),
    new players('sGap_Striker', 'Brazil'),
    new players('Bolo_lendario', 'Brazil'),
+   new players('iTn_', 'Brazil'),
+   new players('zGhb', 'Brazil'),
+   new players('Mogz', 'Brazil'),
+   new players('Bilu o mito', 'Brazil'),
 ];
 
 class matches {
@@ -83,4 +87,5 @@ const newMatches = [
    new matches('jgameplayer', 3, 'Netzz II', 6),
    new matches('jgameplayer', 4, 'FIyJam', 6),
    new matches('I Anger People', 3, 'FIyJam', 5),
+   new matches('zGhb', 4, 'Mogz', 4),
 ];
