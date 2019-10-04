@@ -65,11 +65,11 @@ let newSeasonBox = (n) => {
 	switch (tournamentType) {
 		case 'league-1vs1':
 			titPd = ['Champion', '2nd place', '3rd place'];
-			awaPd = [['crown', 'first-place'], ['second-place'], ['third-place']];
+			awaPd = [['first-place'], ['second-place'], ['third-place']];
 			break;
 		case 'league-2vs2':
 			titPd = ['Champions', '2nd place', '3rd place'];
-			awaPd = [['crown', 'first-place'], ['second-place'], ['third-place']];
+			awaPd = [['first-place'], ['second-place'], ['third-place']];
 			break;
 		case 'cup-1vs1':
 			titPd = ['Winner', 'Runner-up'];
