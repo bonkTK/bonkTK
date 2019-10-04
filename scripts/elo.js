@@ -132,7 +132,7 @@ let displayRanking = () => {
 			gD = `+${gD}`;
 		}
 
-		if (newPlayers[i].played >= 0) {
+		if (newPlayers[i].played > 0) {
 			p++;
 			playerBox.innerHTML =
 				`
