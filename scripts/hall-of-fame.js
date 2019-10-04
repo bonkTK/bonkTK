@@ -39,8 +39,8 @@ const newCompetition = [
    new competition('tournaments-1vs1', 'December 1vs1', '7 Dec 2017', [['Trxior'], ['Nub1'], ['GSpeku']]),
 
 	/* League 2vs2 */
-   new competition('league-2vs2', 'League 2vs2', season[1], [['Trxior', 'General_Richt', 'zmudx'], ['GSpeku', 'Bunniesss', 'Trocir'], ['bbbZG', 'leftright', 'Pimpektron1']]),
-   new competition('league-2vs2', 'League 2vs2', season[2], [['GSpeku', 'Bunniesss', 'Trocir'], ['Trxior', 'General_Richt', 'zmudx'], ['bbbZG', 'leftright', 'Pimpektron1']]),
+   new competition('league-2vs2', 'League 2vs2', season[1], [['Trxior', 'General_Richt', 'zmudx'], ['GSpeku', 'Bunniesss', 'Trocir'], ['bbb86', 'leftright', 'Pimpektron1']]),
+   new competition('league-2vs2', 'League 2vs2', season[2], [['GSpeku', 'Bunniesss', 'Trocir'], ['Trxior', 'General_Richt', 'zmudx'], ['bbb86', 'leftright', 'Pimpektron1']]),
 
 	/* Cup 2vs2 */
    new competition('cup-2vs2', 'Cup 2vs2', season[1], [['GSpeku', 'Bunniesss', 'Trocir'], ['Trxior', 'General_Richt', 'zmudx']]),
